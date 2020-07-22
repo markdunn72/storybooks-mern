@@ -8,7 +8,7 @@
     "start": "concurrently \"npm run server-prod\" \"npm run client\"",
     "server-prod": "cross-env NODE_ENV=production node server",
     "server-dev": "cross-env NODE_ENV=development nodemon server",
-    "dev": "concurrently \"npm run server-dev\" \"npm run client\"",
+    "dev": "npm run get-name && concurrently \"npm run server-dev\" \"npm run client\"",
     "client": "npm start --prefix client"
   },
   "author": "Mark Dunn",

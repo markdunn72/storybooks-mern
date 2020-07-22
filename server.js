@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
@@ -10,9 +11,13 @@ connectDB();
 
 const app = express();
 
+// Dev environment logging
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+
+// Static folder
+app.use(express.static(path.join(__dirname, "client", "public")));
 
 app.get("/api/customers", (req, res) => {
   const customers = [

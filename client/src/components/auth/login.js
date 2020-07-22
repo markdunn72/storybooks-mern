@@ -2,8 +2,11 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="container login-container">
+      <h1 className="center">Login</h1>
+      <div className="card">
+        <div className="card-content"></div>
+      </div>
     </div>
   );
 };
